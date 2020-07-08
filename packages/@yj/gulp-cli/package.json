@@ -1,6 +1,6 @@
 {
   "name": "@yj/yj-gulp-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "gulp cli base",
   "bin": {
     "yj-gulp-cli": "bin/yj-gulp-cli.js"
@@ -31,5 +31,6 @@
     "gulp-swig": "^0.9.1",
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^3.1.6"
-  }
+  },
+  "gitHead": "28fbe3f10aee01166eab18856f4aaefae8e150e7"
 }

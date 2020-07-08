@@ -8,6 +8,7 @@ const loadPlugins = require('gulp-load-plugins')
 const plugins = loadPlugins()
 const bs = browserSync.create()
 const cwd = process.cwd()
+console.log(cwd)
 let config = {
   // default config
   build: {

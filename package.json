@@ -1,8 +1,9 @@
 {
-  "name": "yj",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "license": "MIT",
+  "workspaces": [
+    "packages/@yj/*"
+  ],
   "scripts": {},
   "dependencies": {},
   "devDependencies": {

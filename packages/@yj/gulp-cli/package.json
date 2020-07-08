@@ -1,5 +1,5 @@
 {
-  "name": "yj-gulp-cli",
+  "name": "@yj/yj-gulp-cli",
   "version": "0.0.1",
   "description": "gulp cli base",
   "bin": {

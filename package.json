@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "workspaces": [
-    "packages/@yj/*"
+    "packages/@y-pkgs/*"
   ],
   "scripts": {},
   "dependencies": {},

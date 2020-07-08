@@ -1,5 +1,5 @@
 {
-  "name": "@yj/yj-gulp-cli",
+  "name": "@y-pkgs/yj-gulp-cli",
   "version": "0.0.5",
   "description": "gulp cli base",
   "bin": {
@@ -32,5 +32,5 @@
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^3.1.6"
   },
-  "gitHead": "7b646aae24a8ec180bcec938b0dd93d87a7d7dc1"
+  "gitHead": "83c4b43b543a8148e51d2784c429b0b3463dbcbb"
 }

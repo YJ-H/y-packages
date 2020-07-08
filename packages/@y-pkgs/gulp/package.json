@@ -1,9 +1,9 @@
 {
-  "name": "@y-pkgs/yj-gulp-cli",
+  "name": "@y-pkgs/yj-gulp",
   "version": "0.0.7",
-  "description": "gulp cli base",
+  "description": "yj gulp base",
   "bin": {
-    "yj-gulp-cli": "bin/yj-gulp-cli.js"
+    "yj-gulp": "bin/yj-gulp.js"
   },
   "main": "lib/index.js",
   "author": "yj",

@@ -1,6 +1,6 @@
 {
   "name": "@y-pkgs/yj-gulp-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "gulp cli base",
   "bin": {
     "yj-gulp-cli": "bin/yj-gulp-cli.js"

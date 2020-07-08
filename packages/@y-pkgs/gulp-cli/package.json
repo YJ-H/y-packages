@@ -15,6 +15,9 @@
   "directories": {
     "lib": "lib"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
@@ -32,5 +35,5 @@
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^3.1.6"
   },
-  "gitHead": "83c4b43b543a8148e51d2784c429b0b3463dbcbb"
+  "gitHead": "e347d8daa18c024fb46369245e2ec143959ede04"
 }

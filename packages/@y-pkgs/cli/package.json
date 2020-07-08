@@ -1,0 +1,10 @@
+{
+  "name": "@yj/cli",
+  "version": "0.0.1",
+  "description": "yj cli",
+  "bin": {
+    "yj-cli": "index.js"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}

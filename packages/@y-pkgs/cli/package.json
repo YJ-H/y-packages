@@ -1,10 +1,35 @@
 {
-  "name": "@yj/cli",
+  "name": "@y-pkgs/cli",
   "version": "0.0.1",
-  "description": "yj cli",
+  "description": "yj-cli",
+  "author": "heyingjie <a910102423@gmail.com>",
+  "homepage": "https://github.com/YJ-H/y-packages#readme",
+  "license": "MIT",
+  "main": "lib/cli.js",
   "bin": {
-    "yj-cli": "index.js"
+    "yj-cli": "bin/index.js"
   },
-  "main": "index.js",
-  "license": "MIT"
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YJ-H/y-packages.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/YJ-H/y-packages/issues"
+  },
+  "dependencies": {
+    "inquirer": "^7.3.0"
+  }
 }

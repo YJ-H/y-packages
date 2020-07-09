@@ -4,5 +4,6 @@
   "packages": [
     "packages/@yj/*"
   ],
+  "npmClientArgs": ["--production", "--no-optional"],
   "version": "independent"
 }

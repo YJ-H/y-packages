@@ -1,15 +1,27 @@
 const { src, dest, parallel, series, watch } = require('gulp')
-
+var argv = require('minimist')(process.argv.slice(2));
 const del = require('del')
 const browserSync = require('browser-sync')
-
+const Comb = require('csscomb')
+const standard = require('standard')
 const loadPlugins = require('gulp-load-plugins')
-
+const path = require('path')
 const plugins = loadPlugins()
 const bs = browserSync.create()
 const cwd = process.cwd()
 let config = {
   // default config
+  src: 'src',
+  dist: 'dist',
+  temp: 'temp',
+  public: 'public',
+  paths: {
+    styles: 'assets/styles/*.scss',
+    scripts: 'assets/scripts/*.js',
+    pages: '*.html',
+    images: 'assets/images/**',
+    fonts: 'assets/fonts/**'
+  },
   build: {
     src: 'src',
     dist: 'dist',
@@ -32,6 +44,14 @@ try {
 
 const clean = () => {
   return del([config.build.dist, config.build.temp])
+}
+
+const lint = done => {
+  const cwd = path.join(__dirname, config.src)
+  console.log(cwd)
+  const comb = new Comb(require('./.csscomb.json'))
+  comb.processPath(config.src)
+  standard.lintFiles(config.paths.scripts, { cwd, fix: true }, done)
 }
 
 const style = () => {
@@ -88,8 +108,8 @@ const serve = () => {
 
   bs.init({
     notify: false,
-    port: 2080,
-    // open: false,
+    port: argv.port || 2080,
+    open: argv.open,
     // files: 'dist/**',
     server: {
       baseDir: [config.build.temp, config.build.dist, config.build.public],
@@ -99,6 +119,26 @@ const serve = () => {
     }
   })
 }
+
+const distServer = () => {
+  bs.init({
+    notify: false,
+    port: argv.port === undefined ? 2080 : argv.port,
+    open: argv.open === undefined ? false : argv.open,
+    server: config.dest
+  })
+}
+
+const upload = () => {
+  return src('**', { cwd: config.dest })
+    .pipe(
+      plugins.ghPages({
+        cacheDir: `${config.temp}/publish`,
+        branch: argv.branch === undefined ? 'gh-pages' : argv.branch
+      })
+    )
+}
+
 
 const useref = () => {
   return src(config.build.paths.pages, { base: config.build.temp, cwd: config.build.temp })
@@ -127,10 +167,18 @@ const build =  series(
   )
 )
 
+const start = series(build, distServer)
+
+const deploy = series(build, upload)
+
 const develop = series(compile, serve)
 
 module.exports = {
+  start,
+  deploy,
+  lint,
+  compile,
+  serve: develop,
   clean,
   build,
-  develop
 }

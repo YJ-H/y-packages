@@ -1,6 +1,6 @@
 {
   "name": "@y-pkgs/yj-gulp",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "yj gulp base",
   "bin": {
     "yj-gulp": "bin/yj-gulp.js"
